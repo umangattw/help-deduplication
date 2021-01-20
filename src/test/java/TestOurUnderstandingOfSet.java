@@ -92,5 +92,15 @@ public class TestOurUnderstandingOfSet {
 
             assertThat(integers.size(), is(1));
         }
+
+        @Test
+        void withTwoEqualElementsShouldNotHaveASizeOfTwo() {
+            Point origin = new Point(0, 0);
+            Point anotherOrigin = new Point(0, 0);
+
+            HashSet<Point> integers = new HashSet<>(asList(origin, anotherOrigin));
+
+            assertThat(integers.size(), is(not(2)));
+        }
     }
 }
